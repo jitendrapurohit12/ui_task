@@ -22,9 +22,6 @@ class _SearchBarState extends State<SearchBar> {
       height: 50,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(
-          Radius.circular(5.0),
-        ),
         boxShadow: <BoxShadow>[
           BoxShadow(
               blurRadius: 8.0,

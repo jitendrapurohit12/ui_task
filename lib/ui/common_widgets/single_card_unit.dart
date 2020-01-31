@@ -14,9 +14,6 @@ class SingleCardUnit extends StatelessWidget {
       height: 81,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(
-          Radius.circular(5.0),
-        ),
         boxShadow: <BoxShadow>[
           BoxShadow(
               blurRadius: 8.0,
@@ -30,18 +27,8 @@ class SingleCardUnit extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(model.includePadding ? 28.0 : 0.0),
             child: model.isPng
-                ? ClipRRect(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(5),
-                        bottomLeft: Radius.circular(5)),
-                    child: Image.asset(model.leadingPath),
-                  )
-                : ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(5),
-                      bottomLeft: Radius.circular(5),
-                    ),
-                    child: SvgPicture.asset(model.leadingPath)),
+                ? Image.asset(model.leadingPath)
+                : SvgPicture.asset(model.leadingPath),
           ),
           SizedBox(
             width: 16,
