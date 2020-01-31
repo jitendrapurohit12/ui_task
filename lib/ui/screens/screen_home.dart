@@ -26,7 +26,7 @@ class _ScreenHomeState extends State<ScreenHome> {
       appBar: AppBar(
         centerTitle: true,
         leading: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 14),
           child: SvgPicture.asset(
             bicycle,
           ),
@@ -34,18 +34,26 @@ class _ScreenHomeState extends State<ScreenHome> {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+            SvgPicture.asset(
+              online,
+              height: 13,
+              width: 13,
+            ),
             SizedBox(
               width: 8,
             ),
             Text(
               'Niklas\'s Bike',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, color: Color(0xFF363636)),
             ),
           ],
         ),
         actions: <Widget>[
           SvgPicture.asset(
             profile,
+            width: 24,
+            height: 24,
           ),
           SizedBox(
             width: 18,
@@ -54,25 +62,25 @@ class _ScreenHomeState extends State<ScreenHome> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(18.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               SizedBox(
-                height: 16,
+                height: 40,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8.0),
+                padding: const EdgeInsets.only(left: 3.0),
                 child: Text('Profiler',
                     style: Theme.of(context).textTheme.display1.copyWith(
-                        color: Colors.black, fontWeight: FontWeight.bold)),
+                        color: Color(0xFF363636), fontWeight: FontWeight.bold)),
               ),
               SizedBox(
-                height: 16,
+                height: 40,
               ),
               SearchBar(),
               SizedBox(
-                height: 8,
+                height: 10,
               ),
               for (int i = 0; i < cardList.length; i++)
                 SingleCardUnit(
@@ -110,8 +118,8 @@ class _ScreenHomeState extends State<ScreenHome> {
                             width: 24,
                             height: 24,
                             color: bottomNavigationList[i].isSelected
-                                ? Colors.red
-                                : Colors.grey,
+                                ? Color(0xFFFF0A50)
+                                : Color(0xFF363636),
                           ),
                           SizedBox(
                             height: 4,
@@ -119,10 +127,11 @@ class _ScreenHomeState extends State<ScreenHome> {
                           Text(
                             bottomNavigationList[i].title,
                             style: TextStyle(
-                                fontSize: 12,
-                                color: bottomNavigationList[i].isSelected
-                                    ? Colors.red
-                                    : Colors.grey),
+                              fontSize: 10,
+                              color: bottomNavigationList[i].isSelected
+                                  ? Color(0xFFFF0A50)
+                                  : Color(0xFF363636),
+                            ),
                           ),
                         ],
                       ),
@@ -136,29 +145,3 @@ class _ScreenHomeState extends State<ScreenHome> {
     );
   }
 }
-
-// bottomNavigationBar: BottomNavigationBar(
-//         items: navigationList
-//             .map(
-//               (model) => BottomNavigationBarItem(
-//                 icon: SvgPicture.asset(
-//                   model.imagePath,
-//                   width: 24,
-//                   height: 24,
-//                   color: model.isSelected ? Colors.red : Colors.grey,
-//                 ),
-//                 title: Text(
-//                   model.title,
-//                   style: TextStyle(
-//                       color: model.isSelected ? Colors.red : Colors.grey),
-//                 ),
-//               ),
-//             )
-//             .toList(),
-//         onTap: (i) => setState(() {
-//           bottomNavigationList.forEach((model) => model.isSelected = false);
-//           bottomNavigationList[i].isSelected = true;
-//         }),
-//         showUnselectedLabels: true,
-//         iconSize: 24,
-//       )

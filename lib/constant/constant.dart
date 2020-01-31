@@ -1,4 +1,6 @@
 //Image Paths
+import 'package:flutter/material.dart';
+
 const add = 'assets/images/add.svg';
 const cart = 'assets/images/cart.svg';
 const enabledSwitch = 'assets/images/sw_enabled.svg';
@@ -15,3 +17,5 @@ const profiler = 'assets/images/profiler.svg';
 const search = 'assets/images/search.svg';
 const settings = 'assets/images/settings.svg';
 const bicycle = 'assets/images/bicycle.svg';
+
+const shadowColor = Color(0xFFC4C4C4);
